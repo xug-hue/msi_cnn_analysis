@@ -1,0 +1,262 @@
+D:\PycharmProjects\TestKeras\venv\Scripts\python.exe D:/PycharmProjects/TestKeras/main_MSI_1DCNN_4class_Train_CRCglycan.py
+(26523, 24998)
+2026-05-17 17:42:28.388449: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-05-17 17:42:29.492738: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5478 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3070 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.6
+D:\PycharmProjects\TestKeras\main_MSI_1DCNN_4class_Train_CRCglycan.py:150: UserWarning: `Model.fit_generator` is deprecated and will be removed in a future version. Please use `Model.fit`, which supports generators.
+  model.fit_generator(
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv1d (Conv1D)             (None, 12492, 16)         272       
+                                                                 
+ conv1d_1 (Conv1D)           (None, 6246, 16)          4112      
+                                                                 
+ max_pooling1d (MaxPooling1D  (None, 3123, 16)         0         
+ )                                                               
+                                                                 
+ conv1d_2 (Conv1D)           (None, 1562, 64)          8256      
+                                                                 
+ conv1d_3 (Conv1D)           (None, 781, 64)           32832     
+                                                                 
+ max_pooling1d_1 (MaxPooling  (None, 390, 64)          0         
+ 1D)                                                             
+                                                                 
+ conv1d_4 (Conv1D)           (None, 195, 128)          32896     
+                                                                 
+ conv1d_5 (Conv1D)           (None, 98, 128)           65664     
+                                                                 
+ max_pooling1d_2 (MaxPooling  (None, 49, 128)          0         
+ 1D)                                                             
+                                                                 
+ conv1d_6 (Conv1D)           (None, 49, 256)           65792     
+                                                                 
+ conv1d_7 (Conv1D)           (None, 49, 256)           131328    
+                                                                 
+ max_pooling1d_3 (MaxPooling  (None, 24, 256)          0         
+ 1D)                                                             
+                                                                 
+ global_average_pooling1d (G  (None, 256)              0         
+ lobalAveragePooling1D)                                          
+                                                                 
+ dropout (Dropout)           (None, 256)               0         
+                                                                 
+ dense (Dense)               (None, 4)                 1028      
+                                                                 
+=================================================================
+Total params: 342,180
+Trainable params: 342,180
+Non-trainable params: 0
+_________________________________________________________________
+None
+(26522, 2)
+Found 23870 train items.
+list 1 is [12222     2]
+Epoch 1/50
+2026-05-17 17:42:32.588095: I tensorflow/stream_executor/cuda/cuda_dnn.cc:368] Loaded cuDNN version 8302
+2026-05-17 17:42:34.938117: I tensorflow/stream_executor/cuda/cuda_blas.cc:1786] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+159/159 [==============================] - ETA: 0s - loss: 0.3022 - acc: 0.7453(26522, 2)
+Found 2652 test items.
+list 1 is [9172    3]
+
+Epoch 1: val_acc improved from -inf to 0.92588, saving model to msi_cnn_4class_best_model.01-0.93.h5
+159/159 [==============================] - 29s 144ms/step - loss: 0.3022 - acc: 0.7453 - val_loss: 0.1138 - val_acc: 0.9259
+Epoch 2/50
+159/159 [==============================] - ETA: 0s - loss: 0.1099 - acc: 0.9312
+Epoch 2: val_acc improved from 0.92588 to 0.95333, saving model to msi_cnn_4class_best_model.02-0.95.h5
+159/159 [==============================] - 24s 145ms/step - loss: 0.1099 - acc: 0.9312 - val_loss: 0.0782 - val_acc: 0.9533
+Epoch 3/50
+159/159 [==============================] - ETA: 0s - loss: 0.0829 - acc: 0.9474
+Epoch 3: val_acc improved from 0.95333 to 0.95843, saving model to msi_cnn_4class_best_model.03-0.96.h5
+159/159 [==============================] - 23s 143ms/step - loss: 0.0829 - acc: 0.9474 - val_loss: 0.0647 - val_acc: 0.9584
+Epoch 4/50
+159/159 [==============================] - ETA: 0s - loss: 0.0757 - acc: 0.9516
+Epoch 4: val_acc improved from 0.95843 to 0.96118, saving model to msi_cnn_4class_best_model.04-0.96.h5
+159/159 [==============================] - 23s 147ms/step - loss: 0.0757 - acc: 0.9516 - val_loss: 0.0611 - val_acc: 0.9612
+Epoch 5/50
+159/159 [==============================] - ETA: 0s - loss: 0.0682 - acc: 0.9559
+Epoch 5: val_acc did not improve from 0.96118
+159/159 [==============================] - 23s 143ms/step - loss: 0.0682 - acc: 0.9559 - val_loss: 0.0630 - val_acc: 0.9592
+Epoch 6/50
+159/159 [==============================] - ETA: 0s - loss: 0.0609 - acc: 0.9600
+Epoch 6: val_acc did not improve from 0.96118
+159/159 [==============================] - 23s 144ms/step - loss: 0.0609 - acc: 0.9600 - val_loss: 0.0540 - val_acc: 0.9600
+Epoch 7/50
+159/159 [==============================] - ETA: 0s - loss: 0.0569 - acc: 0.9617
+Epoch 7: val_acc improved from 0.96118 to 0.96235, saving model to msi_cnn_4class_best_model.07-0.96.h5
+159/159 [==============================] - 23s 145ms/step - loss: 0.0569 - acc: 0.9617 - val_loss: 0.0522 - val_acc: 0.9624
+Epoch 8/50
+159/159 [==============================] - ETA: 0s - loss: 0.0522 - acc: 0.9649
+Epoch 8: val_acc improved from 0.96235 to 0.96667, saving model to msi_cnn_4class_best_model.08-0.97.h5
+159/159 [==============================] - 23s 145ms/step - loss: 0.0522 - acc: 0.9649 - val_loss: 0.0487 - val_acc: 0.9667
+Epoch 9/50
+159/159 [==============================] - ETA: 0s - loss: 0.0508 - acc: 0.9667
+Epoch 9: val_acc did not improve from 0.96667
+159/159 [==============================] - 22s 141ms/step - loss: 0.0508 - acc: 0.9667 - val_loss: 0.0506 - val_acc: 0.9624
+Epoch 10/50
+159/159 [==============================] - ETA: 0s - loss: 0.0478 - acc: 0.9678
+Epoch 10: val_acc did not improve from 0.96667
+159/159 [==============================] - 23s 144ms/step - loss: 0.0478 - acc: 0.9678 - val_loss: 0.0482 - val_acc: 0.9667
+Epoch 11/50
+159/159 [==============================] - ETA: 0s - loss: 0.0471 - acc: 0.9684
+Epoch 11: val_acc did not improve from 0.96667
+159/159 [==============================] - 23s 144ms/step - loss: 0.0471 - acc: 0.9684 - val_loss: 0.0497 - val_acc: 0.9651
+Epoch 12/50
+159/159 [==============================] - ETA: 0s - loss: 0.0440 - acc: 0.9689
+Epoch 12: val_acc did not improve from 0.96667
+159/159 [==============================] - 23s 146ms/step - loss: 0.0440 - acc: 0.9689 - val_loss: 0.0541 - val_acc: 0.9624
+Epoch 13/50
+159/159 [==============================] - ETA: 0s - loss: 0.0438 - acc: 0.9696
+Epoch 13: val_acc did not improve from 0.96667
+159/159 [==============================] - 22s 137ms/step - loss: 0.0438 - acc: 0.9696 - val_loss: 0.0561 - val_acc: 0.9580
+Epoch 14/50
+159/159 [==============================] - ETA: 0s - loss: 0.0409 - acc: 0.9720
+Epoch 14: val_acc did not improve from 0.96667
+159/159 [==============================] - 22s 140ms/step - loss: 0.0409 - acc: 0.9720 - val_loss: 0.0509 - val_acc: 0.9616
+Epoch 15/50
+159/159 [==============================] - ETA: 0s - loss: 0.0402 - acc: 0.9730
+Epoch 15: val_acc did not improve from 0.96667
+159/159 [==============================] - 22s 141ms/step - loss: 0.0402 - acc: 0.9730 - val_loss: 0.0481 - val_acc: 0.9651
+Epoch 16/50
+159/159 [==============================] - ETA: 0s - loss: 0.0394 - acc: 0.9728
+Epoch 16: val_acc did not improve from 0.96667
+159/159 [==============================] - 22s 141ms/step - loss: 0.0394 - acc: 0.9728 - val_loss: 0.0477 - val_acc: 0.9647
+Epoch 17/50
+159/159 [==============================] - ETA: 0s - loss: 0.0361 - acc: 0.9742
+Epoch 17: val_acc improved from 0.96667 to 0.96745, saving model to msi_cnn_4class_best_model.17-0.97.h5
+159/159 [==============================] - 22s 140ms/step - loss: 0.0361 - acc: 0.9742 - val_loss: 0.0447 - val_acc: 0.9675
+Epoch 18/50
+159/159 [==============================] - ETA: 0s - loss: 0.0371 - acc: 0.9750
+Epoch 18: val_acc did not improve from 0.96745
+159/159 [==============================] - 22s 140ms/step - loss: 0.0371 - acc: 0.9750 - val_loss: 0.0442 - val_acc: 0.9639
+Epoch 19/50
+159/159 [==============================] - ETA: 0s - loss: 0.0362 - acc: 0.9747
+Epoch 19: val_acc improved from 0.96745 to 0.97020, saving model to msi_cnn_4class_best_model.19-0.97.h5
+159/159 [==============================] - 22s 141ms/step - loss: 0.0362 - acc: 0.9747 - val_loss: 0.0415 - val_acc: 0.9702
+Epoch 20/50
+159/159 [==============================] - ETA: 0s - loss: 0.0366 - acc: 0.9745
+Epoch 20: val_acc did not improve from 0.97020
+159/159 [==============================] - 22s 140ms/step - loss: 0.0366 - acc: 0.9745 - val_loss: 0.0460 - val_acc: 0.9686
+Epoch 21/50
+159/159 [==============================] - ETA: 0s - loss: 0.0361 - acc: 0.9744
+Epoch 21: val_acc improved from 0.97020 to 0.97216, saving model to msi_cnn_4class_best_model.21-0.97.h5
+159/159 [==============================] - 22s 140ms/step - loss: 0.0361 - acc: 0.9744 - val_loss: 0.0416 - val_acc: 0.9722
+Epoch 22/50
+159/159 [==============================] - ETA: 0s - loss: 0.0352 - acc: 0.9750
+Epoch 22: val_acc improved from 0.97216 to 0.97255, saving model to msi_cnn_4class_best_model.22-0.97.h5
+159/159 [==============================] - 22s 141ms/step - loss: 0.0352 - acc: 0.9750 - val_loss: 0.0384 - val_acc: 0.9725
+Epoch 23/50
+159/159 [==============================] - ETA: 0s - loss: 0.0327 - acc: 0.9760
+Epoch 23: val_acc improved from 0.97255 to 0.97608, saving model to msi_cnn_4class_best_model.23-0.98.h5
+159/159 [==============================] - 22s 140ms/step - loss: 0.0327 - acc: 0.9760 - val_loss: 0.0342 - val_acc: 0.9761
+Epoch 24/50
+159/159 [==============================] - ETA: 0s - loss: 0.0324 - acc: 0.9766
+Epoch 24: val_acc did not improve from 0.97608
+159/159 [==============================] - 22s 138ms/step - loss: 0.0324 - acc: 0.9766 - val_loss: 0.0387 - val_acc: 0.9733
+Epoch 25/50
+159/159 [==============================] - ETA: 0s - loss: 0.0324 - acc: 0.9773
+Epoch 25: val_acc did not improve from 0.97608
+159/159 [==============================] - 22s 137ms/step - loss: 0.0324 - acc: 0.9773 - val_loss: 0.0379 - val_acc: 0.9725
+Epoch 26/50
+159/159 [==============================] - ETA: 0s - loss: 0.0322 - acc: 0.9769
+Epoch 26: val_acc did not improve from 0.97608
+159/159 [==============================] - 22s 138ms/step - loss: 0.0322 - acc: 0.9769 - val_loss: 0.0374 - val_acc: 0.9729
+Epoch 27/50
+159/159 [==============================] - ETA: 0s - loss: 0.0307 - acc: 0.9776
+Epoch 27: val_acc did not improve from 0.97608
+159/159 [==============================] - 22s 140ms/step - loss: 0.0307 - acc: 0.9776 - val_loss: 0.0361 - val_acc: 0.9753
+Epoch 28/50
+159/159 [==============================] - ETA: 0s - loss: 0.0292 - acc: 0.9790
+Epoch 28: val_acc did not improve from 0.97608
+159/159 [==============================] - 22s 138ms/step - loss: 0.0292 - acc: 0.9790 - val_loss: 0.0373 - val_acc: 0.9733
+Epoch 29/50
+159/159 [==============================] - ETA: 0s - loss: 0.0292 - acc: 0.9802
+Epoch 29: val_acc improved from 0.97608 to 0.97686, saving model to msi_cnn_4class_best_model.29-0.98.h5
+159/159 [==============================] - 22s 139ms/step - loss: 0.0292 - acc: 0.9802 - val_loss: 0.0343 - val_acc: 0.9769
+Epoch 30/50
+159/159 [==============================] - ETA: 0s - loss: 0.0275 - acc: 0.9807
+Epoch 30: val_acc improved from 0.97686 to 0.97804, saving model to msi_cnn_4class_best_model.30-0.98.h5
+159/159 [==============================] - 22s 137ms/step - loss: 0.0275 - acc: 0.9807 - val_loss: 0.0319 - val_acc: 0.9780
+Epoch 31/50
+159/159 [==============================] - ETA: 0s - loss: 0.0275 - acc: 0.9806
+Epoch 31: val_acc improved from 0.97804 to 0.97882, saving model to msi_cnn_4class_best_model.31-0.98.h5
+159/159 [==============================] - 22s 137ms/step - loss: 0.0275 - acc: 0.9806 - val_loss: 0.0314 - val_acc: 0.9788
+Epoch 32/50
+159/159 [==============================] - ETA: 0s - loss: 0.0261 - acc: 0.9810
+Epoch 32: val_acc did not improve from 0.97882
+159/159 [==============================] - 22s 139ms/step - loss: 0.0261 - acc: 0.9810 - val_loss: 0.0342 - val_acc: 0.9753
+Epoch 33/50
+159/159 [==============================] - ETA: 0s - loss: 0.0264 - acc: 0.9815
+Epoch 33: val_acc did not improve from 0.97882
+159/159 [==============================] - 22s 139ms/step - loss: 0.0264 - acc: 0.9815 - val_loss: 0.0355 - val_acc: 0.9749
+Epoch 34/50
+159/159 [==============================] - ETA: 0s - loss: 0.0257 - acc: 0.9825
+Epoch 34: val_acc did not improve from 0.97882
+159/159 [==============================] - 22s 138ms/step - loss: 0.0257 - acc: 0.9825 - val_loss: 0.0382 - val_acc: 0.9725
+Epoch 35/50
+159/159 [==============================] - ETA: 0s - loss: 0.0245 - acc: 0.9823
+Epoch 35: val_acc did not improve from 0.97882
+159/159 [==============================] - 22s 137ms/step - loss: 0.0245 - acc: 0.9823 - val_loss: 0.0409 - val_acc: 0.9698
+Epoch 36/50
+159/159 [==============================] - ETA: 0s - loss: 0.0237 - acc: 0.9836
+Epoch 36: val_acc did not improve from 0.97882
+159/159 [==============================] - 22s 136ms/step - loss: 0.0237 - acc: 0.9836 - val_loss: 0.0416 - val_acc: 0.9710
+Epoch 37/50
+159/159 [==============================] - ETA: 0s - loss: 0.0244 - acc: 0.9827
+Epoch 37: val_acc did not improve from 0.97882
+159/159 [==============================] - 22s 137ms/step - loss: 0.0244 - acc: 0.9827 - val_loss: 0.0479 - val_acc: 0.9678
+Epoch 38/50
+159/159 [==============================] - ETA: 0s - loss: 0.0237 - acc: 0.9832
+Epoch 38: val_acc did not improve from 0.97882
+159/159 [==============================] - 22s 137ms/step - loss: 0.0237 - acc: 0.9832 - val_loss: 0.0434 - val_acc: 0.9698
+Epoch 39/50
+159/159 [==============================] - ETA: 0s - loss: 0.0218 - acc: 0.9850
+Epoch 39: val_acc did not improve from 0.97882
+159/159 [==============================] - 22s 141ms/step - loss: 0.0218 - acc: 0.9850 - val_loss: 0.0388 - val_acc: 0.9706
+Epoch 40/50
+159/159 [==============================] - ETA: 0s - loss: 0.0230 - acc: 0.9835
+Epoch 40: val_acc did not improve from 0.97882
+159/159 [==============================] - 22s 141ms/step - loss: 0.0230 - acc: 0.9835 - val_loss: 0.0355 - val_acc: 0.9757
+Epoch 41/50
+159/159 [==============================] - ETA: 0s - loss: 0.0224 - acc: 0.9844
+Epoch 41: val_acc improved from 0.97882 to 0.97961, saving model to msi_cnn_4class_best_model.41-0.98.h5
+159/159 [==============================] - 22s 140ms/step - loss: 0.0224 - acc: 0.9844 - val_loss: 0.0298 - val_acc: 0.9796
+Epoch 42/50
+159/159 [==============================] - ETA: 0s - loss: 0.0226 - acc: 0.9845
+Epoch 42: val_acc did not improve from 0.97961
+159/159 [==============================] - 22s 138ms/step - loss: 0.0226 - acc: 0.9845 - val_loss: 0.0300 - val_acc: 0.9792
+Epoch 43/50
+159/159 [==============================] - ETA: 0s - loss: 0.0206 - acc: 0.9852
+Epoch 43: val_acc did not improve from 0.97961
+159/159 [==============================] - 22s 140ms/step - loss: 0.0206 - acc: 0.9852 - val_loss: 0.0334 - val_acc: 0.9765
+Epoch 44/50
+159/159 [==============================] - ETA: 0s - loss: 0.0216 - acc: 0.9849
+Epoch 44: val_acc did not improve from 0.97961
+159/159 [==============================] - 22s 139ms/step - loss: 0.0216 - acc: 0.9849 - val_loss: 0.0329 - val_acc: 0.9769
+Epoch 45/50
+159/159 [==============================] - ETA: 0s - loss: 0.0202 - acc: 0.9868
+Epoch 45: val_acc did not improve from 0.97961
+159/159 [==============================] - 22s 141ms/step - loss: 0.0202 - acc: 0.9868 - val_loss: 0.0317 - val_acc: 0.9788
+Epoch 46/50
+159/159 [==============================] - ETA: 0s - loss: 0.0207 - acc: 0.9847
+Epoch 46: val_acc did not improve from 0.97961
+159/159 [==============================] - 23s 142ms/step - loss: 0.0207 - acc: 0.9847 - val_loss: 0.0307 - val_acc: 0.9792
+Epoch 47/50
+159/159 [==============================] - ETA: 0s - loss: 0.0183 - acc: 0.9874
+Epoch 47: val_acc did not improve from 0.97961
+159/159 [==============================] - 21s 135ms/step - loss: 0.0183 - acc: 0.9874 - val_loss: 0.0307 - val_acc: 0.9788
+Epoch 48/50
+159/159 [==============================] - ETA: 0s - loss: 0.0191 - acc: 0.9862
+Epoch 48: val_acc did not improve from 0.97961
+159/159 [==============================] - 22s 137ms/step - loss: 0.0191 - acc: 0.9862 - val_loss: 0.0330 - val_acc: 0.9776
+Epoch 49/50
+159/159 [==============================] - ETA: 0s - loss: 0.0197 - acc: 0.9853
+Epoch 49: val_acc did not improve from 0.97961
+159/159 [==============================] - 22s 136ms/step - loss: 0.0197 - acc: 0.9853 - val_loss: 0.0334 - val_acc: 0.9784
+Epoch 50/50
+159/159 [==============================] - ETA: 0s - loss: 0.0185 - acc: 0.9863
+Epoch 50: val_acc did not improve from 0.97961
+159/159 [==============================] - 22s 136ms/step - loss: 0.0185 - acc: 0.9863 - val_loss: 0.0349 - val_acc: 0.9769
+
+Process finished with exit code 0

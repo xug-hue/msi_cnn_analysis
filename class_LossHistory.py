@@ -51,7 +51,7 @@ class LossHistory(keras.callbacks.Callback):
         plt.ylabel(label)
         plt.xlabel(type)
         plt.legend(loc="upper right")
-        plt.savefig("MSI/result/HR2MSI/"+type+'_'+label+'.jpg')
+        plt.savefig("MSI/result/CRCglycan/cnn/"+type+'_'+label+'.jpg')
         plt.close()
 
     def draw_batch(self, lists, label, type):
@@ -61,7 +61,7 @@ class LossHistory(keras.callbacks.Callback):
         plt.ylabel(label)
         plt.xlabel(type)
         plt.legend(loc="upper right")
-        plt.savefig("MSI/result/HR2MSI/"+type+'_'+label+'.jpg')
+        plt.savefig("MSI/result/CRCglycan/cnn/"+type+'_'+label+'.jpg')
         plt.close()
 
     def draw_batch_lim(self, lists, label, type):
@@ -71,7 +71,7 @@ class LossHistory(keras.callbacks.Callback):
         plt.ylabel(label)
         plt.xlabel(type)
         plt.legend(loc="upper right")
-        plt.savefig("MSI/result/HR2MSI/"+type+'_lim_'+label+'.jpg')
+        plt.savefig("MSI/result/CRCglycan/cnn/"+type+'_lim_'+label+'.jpg')
         plt.close()
 
     # 由于这⾥的绘图设置的是5s绘制⼀次，当训练结束后得到的图可能不是⼀个完整的训练过程（最后⼀次绘图结束，有训练了0-5秒的时间）
@@ -89,7 +89,7 @@ class LossHistory(keras.callbacks.Callback):
         self.draw_epoch(self.val_acc['epoch'], 'acc', 'val_epoch')
 
     def end_save(self, file):
-        file = "MSI/result/HR2MSI/epoch.csv"
+        file = "MSI/result/CRCglycan/cnn/epoch.csv"
         with open(file, 'w', encoding='utf-8', newline="") as f:
             csv_write = csv.writer(f)
             csv_write.writerow(['acc epoch', 'val_acc epoch'])
@@ -97,7 +97,7 @@ class LossHistory(keras.callbacks.Callback):
                 csv_write = csv.writer(f)
                 csv_write.writerow([self.accuracy['epoch'][j], self.val_acc['epoch'][j]])
 
-        file = "MSI/result/HR2MSI/batch.csv"
+        file = "MSI/result/CRCglycan/cnn/batch.csv"
         with open(file, 'w', encoding='utf-8', newline="") as f:
             csv_write = csv.writer(f)
             csv_write.writerow(['acc batch', 'val_acc batch'])

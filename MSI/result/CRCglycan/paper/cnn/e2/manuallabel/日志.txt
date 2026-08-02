@@ -1,0 +1,267 @@
+D:\PycharmProjects\TestKeras\venv\Scripts\python.exe D:/PycharmProjects/TestKeras/main_MSI_1DCNN_3class_Train_CRCglycan.py
+1    14294
+3     4720
+2     2117
+dtype: int64
+Finish save csv
+(26523, 24998)
+2026-05-29 15:42:17.277323: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-05-29 15:42:18.498078: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5478 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3070 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.6
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv1d (Conv1D)             (None, 12492, 16)         272       
+                                                                 
+ conv1d_1 (Conv1D)           (None, 6246, 16)          4112      
+                                                                 
+ max_pooling1d (MaxPooling1D  (None, 3123, 16)         0         
+ )                                                               
+                                                                 
+ conv1d_2 (Conv1D)           (None, 1562, 64)          8256      
+                                                                 
+ conv1d_3 (Conv1D)           (None, 781, 64)           32832     
+                                                                 
+ max_pooling1d_1 (MaxPooling  (None, 390, 64)          0         
+ 1D)                                                             
+                                                                 
+ conv1d_4 (Conv1D)           (None, 195, 128)          32896     
+                                                                 
+ conv1d_5 (Conv1D)           (None, 98, 128)           65664     
+                                                                 
+ max_pooling1d_2 (MaxPooling  (None, 49, 128)          0         
+ 1D)                                                             
+                                                                 
+ conv1d_6 (Conv1D)           (None, 49, 256)           65792     
+                                                                 
+ conv1d_7 (Conv1D)           (None, 49, 256)           131328    
+                                                                 
+ max_pooling1d_3 (MaxPooling  (None, 24, 256)          0         
+ 1D)                                                             
+                                                                 
+ global_average_pooling1d (G  (None, 256)              0         
+ lobalAveragePooling1D)                                          
+                                                                 
+ dropout (Dropout)           (None, 256)               0         
+                                                                 
+ dense (Dense)               (None, 3)                 771       
+                                                                 
+=================================================================
+Total params: 341,923
+Trainable params: 341,923
+Non-trainable params: 0
+_________________________________________________________________
+None
+D:\PycharmProjects\TestKeras\main_MSI_1DCNN_3class_Train_CRCglycan.py:161: UserWarning: `Model.fit_generator` is deprecated and will be removed in a future version. Please use `Model.fit`, which supports generators.
+  model.fit_generator(
+(21130, 2)
+Found 19017 train items.
+list 1 is [8312    1]
+Epoch 1/50
+2026-05-29 15:42:23.545320: I tensorflow/stream_executor/cuda/cuda_dnn.cc:368] Loaded cuDNN version 8302
+2026-05-29 15:42:34.294517: I tensorflow/stream_executor/cuda/cuda_blas.cc:1786] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+126/126 [==============================] - ETA: 0s - loss: 0.2936 - acc: 0.8200(21130, 2)
+Found 2113 test items.
+list 1 is [4718    3]
+
+Epoch 1: val_acc improved from -inf to 0.91571, saving model to msi_1dcnn_best_model.01-0.92.h5
+126/126 [==============================] - 40s 162ms/step - loss: 0.2936 - acc: 0.8200 - val_loss: 0.1514 - val_acc: 0.9157
+Epoch 2/50
+126/126 [==============================] - ETA: 0s - loss: 0.1146 - acc: 0.9475
+Epoch 2: val_acc improved from 0.91571 to 0.95286, saving model to msi_1dcnn_best_model.02-0.95.h5
+126/126 [==============================] - 20s 146ms/step - loss: 0.1146 - acc: 0.9475 - val_loss: 0.0976 - val_acc: 0.9529
+Epoch 3/50
+126/126 [==============================] - ETA: 0s - loss: 0.0835 - acc: 0.9592
+Epoch 3: val_acc improved from 0.95286 to 0.95381, saving model to msi_1dcnn_best_model.03-0.95.h5
+126/126 [==============================] - 18s 143ms/step - loss: 0.0835 - acc: 0.9592 - val_loss: 0.0847 - val_acc: 0.9538
+Epoch 4/50
+126/126 [==============================] - ETA: 0s - loss: 0.0740 - acc: 0.9640
+Epoch 4: val_acc improved from 0.95381 to 0.95571, saving model to msi_1dcnn_best_model.04-0.96.h5
+126/126 [==============================] - 18s 145ms/step - loss: 0.0740 - acc: 0.9640 - val_loss: 0.0795 - val_acc: 0.9557
+Epoch 5/50
+126/126 [==============================] - ETA: 0s - loss: 0.0669 - acc: 0.9670
+Epoch 5: val_acc improved from 0.95571 to 0.96476, saving model to msi_1dcnn_best_model.05-0.96.h5
+126/126 [==============================] - 19s 149ms/step - loss: 0.0669 - acc: 0.9670 - val_loss: 0.0657 - val_acc: 0.9648
+Epoch 6/50
+126/126 [==============================] - ETA: 0s - loss: 0.0621 - acc: 0.9689
+Epoch 6: val_acc improved from 0.96476 to 0.96762, saving model to msi_1dcnn_best_model.06-0.97.h5
+126/126 [==============================] - 18s 147ms/step - loss: 0.0621 - acc: 0.9689 - val_loss: 0.0627 - val_acc: 0.9676
+Epoch 7/50
+126/126 [==============================] - ETA: 0s - loss: 0.0576 - acc: 0.9703
+Epoch 7: val_acc improved from 0.96762 to 0.96905, saving model to msi_1dcnn_best_model.07-0.97.h5
+126/126 [==============================] - 19s 148ms/step - loss: 0.0576 - acc: 0.9703 - val_loss: 0.0580 - val_acc: 0.9690
+Epoch 8/50
+126/126 [==============================] - ETA: 0s - loss: 0.0534 - acc: 0.9715
+Epoch 8: val_acc improved from 0.96905 to 0.97190, saving model to msi_1dcnn_best_model.08-0.97.h5
+126/126 [==============================] - 18s 146ms/step - loss: 0.0534 - acc: 0.9715 - val_loss: 0.0532 - val_acc: 0.9719
+Epoch 9/50
+126/126 [==============================] - ETA: 0s - loss: 0.0503 - acc: 0.9736
+Epoch 9: val_acc did not improve from 0.97190
+126/126 [==============================] - 18s 147ms/step - loss: 0.0503 - acc: 0.9736 - val_loss: 0.0523 - val_acc: 0.9705
+Epoch 10/50
+126/126 [==============================] - ETA: 0s - loss: 0.0476 - acc: 0.9742
+Epoch 10: val_acc improved from 0.97190 to 0.97238, saving model to msi_1dcnn_best_model.10-0.97.h5
+126/126 [==============================] - 19s 149ms/step - loss: 0.0476 - acc: 0.9742 - val_loss: 0.0488 - val_acc: 0.9724
+Epoch 11/50
+126/126 [==============================] - ETA: 0s - loss: 0.0448 - acc: 0.9765
+Epoch 11: val_acc improved from 0.97238 to 0.97619, saving model to msi_1dcnn_best_model.11-0.98.h5
+126/126 [==============================] - 19s 149ms/step - loss: 0.0448 - acc: 0.9765 - val_loss: 0.0451 - val_acc: 0.9762
+Epoch 12/50
+126/126 [==============================] - ETA: 0s - loss: 0.0436 - acc: 0.9766
+Epoch 12: val_acc did not improve from 0.97619
+126/126 [==============================] - 19s 148ms/step - loss: 0.0436 - acc: 0.9766 - val_loss: 0.0462 - val_acc: 0.9710
+Epoch 13/50
+126/126 [==============================] - ETA: 0s - loss: 0.0405 - acc: 0.9784
+Epoch 13: val_acc did not improve from 0.97619
+126/126 [==============================] - 19s 147ms/step - loss: 0.0405 - acc: 0.9784 - val_loss: 0.0423 - val_acc: 0.9752
+Epoch 14/50
+126/126 [==============================] - ETA: 0s - loss: 0.0408 - acc: 0.9788
+Epoch 14: val_acc did not improve from 0.97619
+126/126 [==============================] - 18s 146ms/step - loss: 0.0408 - acc: 0.9788 - val_loss: 0.0416 - val_acc: 0.9757
+Epoch 15/50
+126/126 [==============================] - ETA: 0s - loss: 0.0378 - acc: 0.9796
+Epoch 15: val_acc improved from 0.97619 to 0.98000, saving model to msi_1dcnn_best_model.15-0.98.h5
+126/126 [==============================] - 19s 149ms/step - loss: 0.0378 - acc: 0.9796 - val_loss: 0.0384 - val_acc: 0.9800
+Epoch 16/50
+126/126 [==============================] - ETA: 0s - loss: 0.0356 - acc: 0.9801
+Epoch 16: val_acc improved from 0.98000 to 0.98095, saving model to msi_1dcnn_best_model.16-0.98.h5
+126/126 [==============================] - 18s 146ms/step - loss: 0.0356 - acc: 0.9801 - val_loss: 0.0368 - val_acc: 0.9810
+Epoch 17/50
+126/126 [==============================] - ETA: 0s - loss: 0.0342 - acc: 0.9816
+Epoch 17: val_acc improved from 0.98095 to 0.98238, saving model to msi_1dcnn_best_model.17-0.98.h5
+126/126 [==============================] - 18s 146ms/step - loss: 0.0342 - acc: 0.9816 - val_loss: 0.0353 - val_acc: 0.9824
+Epoch 18/50
+126/126 [==============================] - ETA: 0s - loss: 0.0338 - acc: 0.9817
+Epoch 18: val_acc did not improve from 0.98238
+126/126 [==============================] - 19s 148ms/step - loss: 0.0338 - acc: 0.9817 - val_loss: 0.0390 - val_acc: 0.9805
+Epoch 19/50
+126/126 [==============================] - ETA: 0s - loss: 0.0310 - acc: 0.9827
+Epoch 19: val_acc did not improve from 0.98238
+126/126 [==============================] - 18s 146ms/step - loss: 0.0310 - acc: 0.9827 - val_loss: 0.0343 - val_acc: 0.9819
+Epoch 20/50
+126/126 [==============================] - ETA: 0s - loss: 0.0296 - acc: 0.9838
+Epoch 20: val_acc did not improve from 0.98238
+126/126 [==============================] - 18s 146ms/step - loss: 0.0296 - acc: 0.9838 - val_loss: 0.0338 - val_acc: 0.9810
+Epoch 21/50
+126/126 [==============================] - ETA: 0s - loss: 0.0285 - acc: 0.9843
+Epoch 21: val_acc did not improve from 0.98238
+126/126 [==============================] - 18s 147ms/step - loss: 0.0285 - acc: 0.9843 - val_loss: 0.0332 - val_acc: 0.9810
+Epoch 22/50
+126/126 [==============================] - ETA: 0s - loss: 0.0273 - acc: 0.9850
+Epoch 22: val_acc did not improve from 0.98238
+126/126 [==============================] - 18s 147ms/step - loss: 0.0273 - acc: 0.9850 - val_loss: 0.0307 - val_acc: 0.9814
+Epoch 23/50
+126/126 [==============================] - ETA: 0s - loss: 0.0252 - acc: 0.9857
+Epoch 23: val_acc did not improve from 0.98238
+126/126 [==============================] - 18s 146ms/step - loss: 0.0252 - acc: 0.9857 - val_loss: 0.0309 - val_acc: 0.9819
+Epoch 24/50
+126/126 [==============================] - ETA: 0s - loss: 0.0232 - acc: 0.9869
+Epoch 24: val_acc did not improve from 0.98238
+126/126 [==============================] - 18s 146ms/step - loss: 0.0232 - acc: 0.9869 - val_loss: 0.0305 - val_acc: 0.9824
+Epoch 25/50
+126/126 [==============================] - ETA: 0s - loss: 0.0232 - acc: 0.9874
+Epoch 25: val_acc did not improve from 0.98238
+126/126 [==============================] - 18s 146ms/step - loss: 0.0232 - acc: 0.9874 - val_loss: 0.0302 - val_acc: 0.9805
+Epoch 26/50
+126/126 [==============================] - ETA: 0s - loss: 0.0220 - acc: 0.9878
+Epoch 26: val_acc improved from 0.98238 to 0.98524, saving model to msi_1dcnn_best_model.26-0.99.h5
+126/126 [==============================] - 18s 145ms/step - loss: 0.0220 - acc: 0.9878 - val_loss: 0.0283 - val_acc: 0.9852
+Epoch 27/50
+126/126 [==============================] - ETA: 0s - loss: 0.0222 - acc: 0.9881
+Epoch 27: val_acc did not improve from 0.98524
+126/126 [==============================] - 18s 144ms/step - loss: 0.0222 - acc: 0.9881 - val_loss: 0.0277 - val_acc: 0.9852
+Epoch 28/50
+126/126 [==============================] - ETA: 0s - loss: 0.0206 - acc: 0.9889
+Epoch 28: val_acc improved from 0.98524 to 0.98619, saving model to msi_1dcnn_best_model.28-0.99.h5
+126/126 [==============================] - 19s 149ms/step - loss: 0.0206 - acc: 0.9889 - val_loss: 0.0262 - val_acc: 0.9862
+Epoch 29/50
+126/126 [==============================] - ETA: 0s - loss: 0.0198 - acc: 0.9896
+Epoch 29: val_acc did not improve from 0.98619
+126/126 [==============================] - 18s 147ms/step - loss: 0.0198 - acc: 0.9896 - val_loss: 0.0311 - val_acc: 0.9819
+Epoch 30/50
+126/126 [==============================] - ETA: 0s - loss: 0.0185 - acc: 0.9894
+Epoch 30: val_acc did not improve from 0.98619
+126/126 [==============================] - 19s 152ms/step - loss: 0.0185 - acc: 0.9894 - val_loss: 0.0272 - val_acc: 0.9843
+Epoch 31/50
+126/126 [==============================] - ETA: 0s - loss: 0.0200 - acc: 0.9890
+Epoch 31: val_acc did not improve from 0.98619
+126/126 [==============================] - 19s 149ms/step - loss: 0.0200 - acc: 0.9890 - val_loss: 0.0292 - val_acc: 0.9838
+Epoch 32/50
+126/126 [==============================] - ETA: 0s - loss: 0.0170 - acc: 0.9905
+Epoch 32: val_acc did not improve from 0.98619
+126/126 [==============================] - 20s 158ms/step - loss: 0.0170 - acc: 0.9905 - val_loss: 0.0249 - val_acc: 0.9852
+Epoch 33/50
+126/126 [==============================] - ETA: 0s - loss: 0.0173 - acc: 0.9901
+Epoch 33: val_acc improved from 0.98619 to 0.98714, saving model to msi_1dcnn_best_model.33-0.99.h5
+126/126 [==============================] - 19s 151ms/step - loss: 0.0173 - acc: 0.9901 - val_loss: 0.0233 - val_acc: 0.9871
+Epoch 34/50
+126/126 [==============================] - ETA: 0s - loss: 0.0195 - acc: 0.9891
+Epoch 34: val_acc did not improve from 0.98714
+126/126 [==============================] - 20s 162ms/step - loss: 0.0195 - acc: 0.9891 - val_loss: 0.0355 - val_acc: 0.9819
+Epoch 35/50
+126/126 [==============================] - ETA: 0s - loss: 0.0198 - acc: 0.9892
+Epoch 35: val_acc did not improve from 0.98714
+126/126 [==============================] - 23s 186ms/step - loss: 0.0198 - acc: 0.9892 - val_loss: 0.0333 - val_acc: 0.9824
+Epoch 36/50
+126/126 [==============================] - ETA: 0s - loss: 0.0174 - acc: 0.9902
+Epoch 36: val_acc did not improve from 0.98714
+126/126 [==============================] - 21s 164ms/step - loss: 0.0174 - acc: 0.9902 - val_loss: 0.0284 - val_acc: 0.9814
+Epoch 37/50
+126/126 [==============================] - ETA: 0s - loss: 0.0195 - acc: 0.9888
+Epoch 37: val_acc did not improve from 0.98714
+126/126 [==============================] - 20s 161ms/step - loss: 0.0195 - acc: 0.9888 - val_loss: 0.0348 - val_acc: 0.9810
+Epoch 38/50
+126/126 [==============================] - ETA: 0s - loss: 0.0186 - acc: 0.9892
+Epoch 38: val_acc did not improve from 0.98714
+126/126 [==============================] - 18s 147ms/step - loss: 0.0186 - acc: 0.9892 - val_loss: 0.0330 - val_acc: 0.9814
+Epoch 39/50
+126/126 [==============================] - ETA: 0s - loss: 0.0179 - acc: 0.9895
+Epoch 39: val_acc did not improve from 0.98714
+126/126 [==============================] - 19s 152ms/step - loss: 0.0179 - acc: 0.9895 - val_loss: 0.0409 - val_acc: 0.9781
+Epoch 40/50
+126/126 [==============================] - ETA: 0s - loss: 0.0164 - acc: 0.9910
+Epoch 40: val_acc did not improve from 0.98714
+126/126 [==============================] - 18s 146ms/step - loss: 0.0164 - acc: 0.9910 - val_loss: 0.0292 - val_acc: 0.9838
+Epoch 41/50
+126/126 [==============================] - ETA: 0s - loss: 0.0137 - acc: 0.9928
+Epoch 41: val_acc did not improve from 0.98714
+126/126 [==============================] - 18s 145ms/step - loss: 0.0137 - acc: 0.9928 - val_loss: 0.0281 - val_acc: 0.9833
+Epoch 42/50
+126/126 [==============================] - ETA: 0s - loss: 0.0138 - acc: 0.9926
+Epoch 42: val_acc did not improve from 0.98714
+126/126 [==============================] - 19s 150ms/step - loss: 0.0138 - acc: 0.9926 - val_loss: 0.0257 - val_acc: 0.9848
+Epoch 43/50
+126/126 [==============================] - ETA: 0s - loss: 0.0131 - acc: 0.9932
+Epoch 43: val_acc did not improve from 0.98714
+126/126 [==============================] - 20s 155ms/step - loss: 0.0131 - acc: 0.9932 - val_loss: 0.0304 - val_acc: 0.9838
+Epoch 44/50
+126/126 [==============================] - ETA: 0s - loss: 0.0130 - acc: 0.9935
+Epoch 44: val_acc did not improve from 0.98714
+126/126 [==============================] - 19s 154ms/step - loss: 0.0130 - acc: 0.9935 - val_loss: 0.0298 - val_acc: 0.9848
+Epoch 45/50
+126/126 [==============================] - ETA: 0s - loss: 0.0134 - acc: 0.9928
+Epoch 45: val_acc did not improve from 0.98714
+126/126 [==============================] - 20s 157ms/step - loss: 0.0134 - acc: 0.9928 - val_loss: 0.0271 - val_acc: 0.9867
+Epoch 46/50
+126/126 [==============================] - ETA: 0s - loss: 0.0133 - acc: 0.9925
+Epoch 46: val_acc did not improve from 0.98714
+126/126 [==============================] - 20s 157ms/step - loss: 0.0133 - acc: 0.9925 - val_loss: 0.0301 - val_acc: 0.9848
+Epoch 47/50
+126/126 [==============================] - ETA: 0s - loss: 0.0139 - acc: 0.9922
+Epoch 47: val_acc improved from 0.98714 to 0.98810, saving model to msi_1dcnn_best_model.47-0.99.h5
+126/126 [==============================] - 20s 156ms/step - loss: 0.0139 - acc: 0.9922 - val_loss: 0.0239 - val_acc: 0.9881
+Epoch 48/50
+126/126 [==============================] - ETA: 0s - loss: 0.0118 - acc: 0.9940
+Epoch 48: val_acc did not improve from 0.98810
+126/126 [==============================] - 19s 152ms/step - loss: 0.0118 - acc: 0.9940 - val_loss: 0.0246 - val_acc: 0.9852
+Epoch 49/50
+126/126 [==============================] - ETA: 0s - loss: 0.0130 - acc: 0.9933
+Epoch 49: val_acc did not improve from 0.98810
+126/126 [==============================] - 19s 153ms/step - loss: 0.0130 - acc: 0.9933 - val_loss: 0.0283 - val_acc: 0.9838
+Epoch 50/50
+126/126 [==============================] - ETA: 0s - loss: 0.0130 - acc: 0.9930
+Epoch 50: val_acc did not improve from 0.98810
+126/126 [==============================] - 20s 157ms/step - loss: 0.0130 - acc: 0.9930 - val_loss: 0.0326 - val_acc: 0.9814
+
+Process finished with exit code 0

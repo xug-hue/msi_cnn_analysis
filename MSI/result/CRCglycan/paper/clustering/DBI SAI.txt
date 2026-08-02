@@ -1,0 +1,48 @@
+D:\PycharmProjects\TestKeras\venv\Scripts\python.exe D:/PycharmProjects/TestKeras/main_MSI_1DCNN_Cluster_CRCglycan_test_i2.py
+D:\PycharmProjects\TestKeras\venv\lib\site-packages\pyimzml\ontology\ontology.py:92: UserWarning: Accession IMS:1000046 found with incorrect name "pixel size". Updating name to "pixel size (x)".
+  warn(
+47688 [[  1  86]
+ [  1  85]
+ [  1  84]
+ ...
+ [461 186]
+ [461 185]
+ [462 193]]
+minlen: 24998 maxlen: 24998 minmz: 899.986572265625 maxmz: 3300.0234375 numsample: 47688
+(47688, 24998)
+time, 17.119588136672974 , 515.5126211643219 , 54.20285129547119 , 0
+davies_bouldin_score: 3.156
+[0.911 0.912 0.882] 0.901
+3.50108988732946
+D:\PycharmProjects\TestKeras\venv\lib\site-packages\pyimzml\ontology\ontology.py:92: UserWarning: Accession IMS:1000046 found with incorrect name "pixel size". Updating name to "pixel size (x)".
+  warn(
+minlen: 24998 maxlen: 24998 minmz: 899.986572265625 maxmz: 3300.0234375 numsample: 47688
+(47688, 24998)
+time, 9.047899007797241 , 510.2532000541687 , 55.09930682182312 , 1
+davies_bouldin_score: 2.961
+[0.96  0.933 0.95 ] 0.948
+3.124804277156703
+D:\PycharmProjects\TestKeras\venv\lib\site-packages\pyimzml\ontology\ontology.py:92: UserWarning: Accession IMS:1000046 found with incorrect name "pixel size". Updating name to "pixel size (x)".
+  warn(
+minlen: 24998 maxlen: 24998 minmz: 899.986572265625 maxmz: 3300.0234375 numsample: 47688
+(47688, 24998)
+time, 8.335699319839478 , 516.9733288288116 , 53.403764963150024 , 2
+davies_bouldin_score: 3.315
+[0.943 0.925 0.905] 0.924
+3.586338084905544
+D:\PycharmProjects\TestKeras\venv\lib\site-packages\pyimzml\ontology\ontology.py:92: UserWarning: Accession IMS:1000046 found with incorrect name "pixel size". Updating name to "pixel size (x)".
+  warn(
+minlen: 24998 maxlen: 24998 minmz: 899.986572265625 maxmz: 3300.0234375 numsample: 47688
+(47688, 24998)
+time, 10.503792762756348 , 519.0260877609253 , 61.74888491630554 , 3
+davies_bouldin_score: 4.138
+[0.941 0.852 0.86 ] 0.884
+4.678711697833157
+D:\PycharmProjects\TestKeras\venv\lib\site-packages\pyimzml\ontology\ontology.py:92: UserWarning: Accession IMS:1000046 found with incorrect name "pixel size". Updating name to "pixel size (x)".
+  warn(
+minlen: 24998 maxlen: 24998 minmz: 899.986572265625 maxmz: 3300.0234375 numsample: 47688
+(47688, 24998)
+time, 9.288957595825195 , 504.9118347167969 , 60.317631244659424 , 4
+davies_bouldin_score: 4.038
+[0.946 0.917 0.92 ] 0.928
+4.352640498448765

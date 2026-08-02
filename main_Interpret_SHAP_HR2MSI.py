@@ -18,13 +18,12 @@ my_table = dt.fread(Data_DIR, sep=",", header=False)  ## datatable格式读取�
 HR2MSI_data = my_table.to_numpy()  ## datatable格式转np数组，保存int数据
 print(HR2MSI_data.shape)
 
-#  CNN模型加载
-MODEL_FILE = "msi_1dcnn_best_model.36-0.99.h5"
+##  CNN模型加载
+MODEL_FILE = "msi_1dcnn_best_model.36-0.99-HR2MSI-clusterlabel.h5"
 model = keras.models.load_model(MODEL_FILE)
 print(model.summary())
 
-#  预测结果加载，只加载预测分类,读出类标签1,2,3 (34840,)
-#  预测方法在main_1DCNN_3class_Interpret_GradCAM_HR2MSI.py中已经讨论
+##  预测结果加载，只加载预测分类,读出类标签1,2,3 (34840,)
 Predicted_result_labels = \
     dt.fread('MSI/data/MSIbiaozhuNPArray_3class_CNNPrediction.csv', sep=",", header=False).to_numpy()[:, 0].astype(int)
 print(Predicted_result_labels[10000], Predicted_result_labels.dtype)
@@ -35,10 +34,11 @@ print(Predicted_result_labels.shape, shap_heatmap_nonorm_sumsample.shape)
 
 np.random.seed(1)
 ## shap解释值计算过程
-# 背景数据选择1：随机采样，随机取1000
-# background = HR2MSI_data[np.random.choice(HR2MSI_data.shape[0], 1000, replace=False)]
-# 背景数据选择2：分层采样，按照三个类的比例选样本100
-background, _, _, _ = train_test_split(HR2MSI_data, Predicted_result_labels, train_size=90,
+# 背景数据选择1：随机采样，随机取100
+# background = HR2MSI_data[np.random.choice(HR2MSI_data.shape[0], 100, replace=False)]
+# 背景数据选择2：分层采样，按照三个类的比例选样本数量
+Train_Size = 60
+background, _, _, _ = train_test_split(HR2MSI_data, Predicted_result_labels, train_size=Train_Size,
                                      stratify=Predicted_result_labels)
 # print(background)
 # 背景数据选择3：只随机采样一个类的样本
@@ -53,7 +53,7 @@ explainer = shap.DeepExplainer((model.input, model.output), background_expanded)
 for sampleNumi in range(HR2MSI_data.shape[0]):  # HR2MSI_data.shape[0]
     if sampleNumi % 1000 == 0:
         print(sampleNumi)
-    # 读出第i个样本的谱数据吗湖月【哦方法
+    # 读出第i个样本的谱数据
     spectrum_to_explain = HR2MSI_data[[sampleNumi]]
 
     # 改变数据维度，类似训练模型时候，增加一个维度，数据要变成(参数数量, 1)的形状
@@ -73,7 +73,8 @@ for sampleNumi in range(HR2MSI_data.shape[0]):  # HR2MSI_data.shape[0]
     shap_heatmap_nonorm_sumsample[:, Predicted_result_labels[sampleNumi] - 1] += shap_heatmap
 
 # 保存总热力图_没有正则化数据到文件
-with open("MSI/result/HR2MSI/shap_heatmap_nonorm_sumsample.csv", 'w', encoding='utf-8', newline="") as f:
-    for i in range(len(shap_heatmap_nonorm_sumsample)):
-        csv_write = csv.writer(f)
-        csv_write.writerow(shap_heatmap_nonorm_sumsample[i])
+file_name = f"MSI/result/HR2MSI/shap_heatmap_nonorm_sumsample_{Train_Size}.csv"
+with open(file_name, 'w', encoding='utf-8', newline="") as f:
+    csv_writer = csv.writer(f)
+    for row in shap_heatmap_nonorm_sumsample:
+        csv_writer.writerow(row)
